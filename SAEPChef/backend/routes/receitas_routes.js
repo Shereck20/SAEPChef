@@ -1,0 +1,1 @@
+const router=require("express").Router();const c=require("../controllers/receitas_controller");router.get("/",c.listar);router.get("/chef/:id",c.listarPorChef);router.post("/",c.criar);router.delete("/:id",c.excluir);module.exports=router;

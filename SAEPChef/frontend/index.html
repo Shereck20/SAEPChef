@@ -1,0 +1,108 @@
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAEPChef</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <section class="usuario-cabecalho">
+      <img id="fotoUsuario" src="anexos_prova/imagens_usuarios/saepChef.jpg" alt="Foto do usuário">
+      <div>
+        <strong id="nomeUsuario">@SAEPChef</strong>
+        <button id="botaoPerfil" class="botao botao-escuro" type="button">Ver Perfil</button>
+      </div>
+    </section>
+    <a class="marca" href="#">SAEPChef</a>
+    <button id="botaoLogin" class="botao botao-escuro" type="button">Login</button>
+  </header>
+
+  <main class="conteudo">
+    <section id="secaoMural">
+      <form id="formBusca" class="busca">
+        <input id="campoBusca" type="search" placeholder="Digite o nome do chef... ex: @chef1">
+        <button type="submit" aria-label="Buscar chef"><img src="anexos_prova/icones/lupa.svg" alt=""></button>
+      </form>
+      <p id="mensagemBusca" class="mensagem-busca"></p>
+      <div id="muralReceitas" class="mural"></div>
+    </section>
+
+    <section id="secaoMinhasReceitas" class="minhas-receitas escondido">
+      <div class="titulo-secao">
+        <button id="voltarMural" class="botao botao-contorno" type="button">Voltar</button>
+        <h1>Cadastro de receitas</h1>
+      </div>
+      <form id="formReceita" class="form-receita" novalidate>
+        <div class="campo">
+          <label for="tituloReceita">Título da Receita</label>
+          <input id="tituloReceita" type="text" placeholder="Ex.: Risoto de Funghi">
+          <small id="erroTitulo" class="erro"></small>
+        </div>
+        <div class="campo">
+          <label for="origemReceita">Origem da receita</label>
+          <input id="origemReceita" type="text" placeholder="Ex.: Itália">
+          <small id="erroOrigem" class="erro"></small>
+        </div>
+        <div class="campo campo-imagem">
+          <label for="imagemReceita">Imagem</label>
+          <input id="imagemReceita" type="file" accept=".jpg,.jpeg,.png,.gif,.webp">
+          <small id="erroImagem" class="erro"></small>
+        </div>
+        <button class="botao botao-escuro" type="submit">Cadastrar</button>
+      </form>
+      <h2>Suas receitas cadastradas</h2>
+      <div id="listaPropriasReceitas" class="lista-proprias"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <strong>SAEPChef</strong>
+    <nav class="redes" aria-label="Redes sociais">
+      <a href="#" aria-label="Instagram"><img src="anexos_prova/icones/instagram.svg" alt=""></a>
+      <a href="#" aria-label="TikTok"><img src="anexos_prova/icones/tiktok.svg" alt=""></a>
+      <a href="#" aria-label="LinkedIn"><img src="anexos_prova/icones/linkedin.svg" alt=""></a>
+      <a href="#" aria-label="YouTube"><img src="anexos_prova/icones/youtube.svg" alt=""></a>
+    </nav>
+    <span>Copyright 2026-2027</span>
+  </footer>
+
+  <div id="modalLogin" class="modal escondido">
+    <div class="modal-conteudo">
+      <button id="fecharLogin" class="botao-icone" type="button"><img src="anexos_prova/icones/close.svg" alt="Fechar login"></button>
+      <h2>Login</h2>
+      <form id="formLogin" novalidate>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="Digite seu e-mail">
+          <small id="erroEmail" class="erro"></small>
+        </div>
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" placeholder="Digite sua senha">
+          <small id="erroSenha" class="erro"></small>
+        </div>
+        <p id="erroLogin" class="erro-login"></p>
+        <div class="acoes-login">
+          <button id="cancelarLogin" class="botao botao-contorno" type="button">Cancelar</button>
+          <button class="botao botao-escuro" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <aside id="painelPerfil" class="painel-perfil">
+    <button id="fecharPerfil" class="botao-icone" type="button"><img src="anexos_prova/icones/close.svg" alt="Fechar"></button>
+    <img id="fotoPerfil" class="foto-perfil" alt="Foto do chef">
+    <h2 id="nomePerfil"></h2>
+    <div class="numeros-perfil">
+      <p><strong id="totalFavoritos">0</strong><span>Favoritos</span></p>
+      <p><strong id="totalReceitas">0</strong><span>Receitas</span></p>
+    </div>
+    <button id="botaoSuasReceitas" class="suas-receitas" type="button">Suas receitas</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
